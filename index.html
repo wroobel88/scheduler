@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- This tells the browser how to read the document. -->
+    <!--<meta charset="utf-8">-->
+
+    <!-- Tells the browser what the title of this page should be. -->
+    <title>Grafik Eurodent</title>
+
+    <!-- Load the page styles. -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--script src="jquery-3.2.1.js"></script-->
+</head>
+
+<body>
+    <div class="logo">
+        <img src="http://eurodent.gda.pl/wp-content/uploads/2016/10/logo_foot.png" alt="">
+        <img src="http://eurodent.gda.pl/wp-content/uploads/2016/10/s-stopka.png" alt="">
+    </div>
+    <form>
+        <input type=button name=print value="Print" onClick="window.print()">
+
+    </form>
+    <button id="save">Save</button>
+    <div class="employees">
+        <table>
+            <tr>
+                <td class="worker" id="drag1" draggable="true" ondragstart="drag(event)">Karolina <button>x</button></td>
+                <td class="worker" id="drag2" draggable="true" ondragstart="drag(event)">Agnieszka <button>x</button></td>
+                <td class="worker" id="drag3" draggable="true" ondragstart="drag(event)">Ola K.<button>x</button></td>
+                <td class="worker" id="drag4" draggable="true" ondragstart="drag(event)">Ola W.<button>x</button></td>
+                <!--td class="worker" id="drag5" draggable="true" ondragstart="drag(event)">M/Z.<button>x</button></td>
+                <td class="worker" id="drag6" draggable="true" ondragstart="drag(event)">T/R<button>x</button></td>
+                <td class="worker" id="drag7" draggable="true" ondragstart="drag(event)">T/P<button>x</button></td-->
+            </tr>
+        </table>
+    </div>
+    <div class="schedule">
+        <table>
+            <thead>
+                <caption id="month-year"></caption>
+                <tr>
+                    <th>Dzień</th>
+                    <th>Rano</th>
+                    <th>Popołudnie</th>
+                    <th>Uwagi</th>
+                </tr>
+            </thead>
+            <tbody id="days">
+                <!--<tr id="day-1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <td id="date">1.09</td>
+                    <td> </td>
+                    <td> </td>
+                    <td><input type="text"></td>
+                </tr> -->
+
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+body {
+	background-color: #f6ca1b;
+}
+
+table {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	margin: auto;
+}
+.calendar {
+	color: steelblue;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	margin: auto;
+	position: relative;
+}
+caption {
+	text-align: left;
+	color: steelblue;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 5px;
+}
+
+thead {
+	background: SteelBlue;
+	color: white;
+}
+
+th,
+td {
+	padding: 5px 10px;
+	border: 2px solid navy;
+	border-radius: 10px;
+	min-width: 50px;
+}
+
+tbody tr:nth-child(even) {
+	background: WhiteSmoke;
+}
+
+button {
+	margin: auto;
+	position: relative;
+}
+/*
+tbody tr td:nth-child(5),
+tbody tr td:nth-child(6),
+tbody tr td:nth-child(7) {
+	text-align: right;
+	font-size: 60%;
+}*/
