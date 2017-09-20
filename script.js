@@ -2,15 +2,15 @@ const month =
 	parseInt(prompt("Podaj miesiąc od 1-12: ", new Date().getMonth() + 1)) - 1;
 const days = [];
 const weekdays = [
-	"Sunday",
-	"Monday",
-	"Tuesday",
-	"Wednesday",
-	"Thursday",
-	"Friday",
-	"Saturday"
+	"Niedziela",
+	"Poniedziałek",
+	"Wtorek",
+	"Środa",
+	"Czwartek",
+	"Piątek",
+	"Sobota"
 ];
-
+/////////////////////////// drag & drop functions
 function drag(ev) {
 	//console.log(ev.dataTransfer);
 	// Add this element's id to the drag payload so the drop handler will
@@ -33,25 +33,23 @@ function drop(ev) {
 function allowDrop(ev) {
 	ev.preventDefault();
 }
-// $("#days").on("click", "button", function() {
-// 	this.parentNode.remove();
-// });
-// document.getElementById("days").addEventListener("click", function(ev) {
-// 	this.parentNode.remove();
-// });
+// remove button
 document.getElementById("days").addEventListener("click", function(ev) {
-	//this.parentNode.remove();
-	ev.path[1].parentNode.removeChild(ev.path[1]);
-});
-//////////////////////////////////////////////////////////////////////////program code
-function numberOfDays(month) {
-	total = 0;
-	for (i = 0; i < month.length; i++) {
-		nOfDays = i;
-		return nOfDays;
+	if (ev.path[0].nodeName === "BUTTON") {
+		ev.path[1].parentNode.removeChild(ev.path[1]);
 	}
-}
+});
+
+//////////////////////////////////////////////////////////////////////////
+// function numberOfDays(month) {
+// 	total = 0;
+// 	for (i = 0; i < month.length; i++) {
+// 		nOfDays = i;
+// 		return nOfDays;
+// 	}
+// }
 var monthLength;
+
 function getDaysInMonth(month, year) {
 	var date = new Date(year, month, 1);
 
@@ -60,6 +58,14 @@ function getDaysInMonth(month, year) {
 		days.push(new Date(date));
 		date.setDate(date.getDate() + 1);
 	}
+
+	for (var i = 0; i < days.length; i++) {
+		//console.log(days[i].getDay());
+		if (days[i].getDay() === 0) {
+			days.splice(i, 1);
+		}
+	}
+	//console.log(days);
 	monthLength = days.length;
 }
 getDaysInMonth(month, 2017);
@@ -70,18 +76,18 @@ function displayDate(month) {
 	now = new Date();
 	year = now.getFullYear();
 	months = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December"
+		"Styczeń",
+		"Luty",
+		"Marzec",
+		"Kwiecień",
+		"Maj",
+		"Czerwiec",
+		"Lipiec",
+		"Sierpień",
+		"Wrzesień",
+		"Październik",
+		"Listopad",
+		"Grudzień"
 	];
 
 	monthYear = document.getElementById("month-year");
@@ -113,7 +119,7 @@ function readTable() {
 		var morning = tableRow.childNodes[1].querySelectorAll(".worker");
 		var evening = tableRow.childNodes[2].querySelectorAll(".worker");
 		var comments = tableRow.childNodes[3].querySelector("input").value;
-		console.log(comments);
+		//console.log(comments);
 		var morIds = [],
 			eveIds = [],
 			commentsText = [];
