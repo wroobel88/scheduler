@@ -1,0 +1,37 @@
+.employees {
+	display: none;
+}
+
+button {
+	display: none;
+}
+
+input[type="button"] {
+	display: none;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 88%;
+}
+th,
+td {
+	padding: 5px 10px;
+	border: 2px solid navy;
+	border-radius: 10px;
+	min-width: 50px;
+}
+.logo {
+	display: none;
+}
+th,
+td {
+	padding: 1px 1px;
+	border: 2px solid navy;
+	border-radius: 10px;
+}
+input[id="comments"] {
+	max-width: 120px;
+}
+tbody td:last-child {
+	max-width: 140px;
+}
