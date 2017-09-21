@@ -5,6 +5,7 @@ body {
 table {
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	margin: auto;
+	margin-bottom: 50px;
 }
 .calendar {
 	color: steelblue;
@@ -33,6 +34,7 @@ td {
 	border: 2px solid navy;
 	border-radius: 10px;
 	min-width: 50px;
+	text-align: center;
 }
 
 tbody tr:nth-child(even) {
@@ -42,6 +44,30 @@ tbody tr:nth-child(even) {
 button {
 	margin: auto;
 	position: relative;
+}
+#drag1 {
+	color: #0066ff;
+	border-color: #0066ff;
+}
+#drag2 {
+	color: #cc0099;
+	border-color: #cc0099;
+}
+#drag3 {
+	color: #009933;
+	border-color: #009933;
+}
+#drag4 {
+	color: #8585ad;
+	border-color: #8585ad;
+}
+.employees {
+	position: fixed;
+	margin-left: 15%;
+}
+.logo {
+	position: relative;
+	margin: auto;
 }
 /*
 tbody tr td:nth-child(5),

@@ -11,7 +11,9 @@
     <!-- Load the page styles. -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="print_style.css" media="print">
     <!--script src="jquery-3.2.1.js"></script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -20,17 +22,23 @@
         <img src="http://eurodent.gda.pl/wp-content/uploads/2016/10/s-stopka.png" alt="">
     </div>
     <form>
-        <input type=button name=print value="Print" onClick="window.print()">
+        <input type=button name=print value="Drukuj" onClick="window.print()">
 
     </form>
-    <button id="save">Save</button>
+    <button id="save">Zapisz</button>
     <div class="employees">
         <table>
             <tr>
-                <td class="worker" id="drag1" draggable="true" ondragstart="drag(event)">Karolina <button class="delete">x</button></td>
-                <td class="worker" id="drag2" draggable="true" ondragstart="drag(event)">Agnieszka <button class="delete">x</button></td>
-                <td class="worker" id="drag3" draggable="true" ondragstart="drag(event)">Ola K.<button class="delete">x</button></td>
-                <td class="worker" id="drag4" draggable="true" ondragstart="drag(event)">Ola W.<button class="delete">x</button></td>
+                <td class="worker" id="drag1" draggable="true" ondragstart="drag(event)">Karolina <button>x</button></td>
+            </tr>
+            <tr>
+                <td class="worker" id="drag2" draggable="true" ondragstart="drag(event)">Agnieszka <button>x</button></td>
+            </tr>
+            <tr>
+                <td class="worker" id="drag3" draggable="true" ondragstart="drag(event)">Ola S.<button>x</button></td>
+            </tr>
+            <tr>
+                <td class="worker" id="drag4" draggable="true" ondragstart="drag(event)">Ola W.<button>x</button></td>
             </tr>
         </table>
     </div>

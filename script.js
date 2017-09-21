@@ -35,8 +35,17 @@ function allowDrop(ev) {
 }
 // remove button
 document.getElementById("days").addEventListener("click", function(ev) {
-	if (ev.path[0].nodeName === "BUTTON") {
+	if (
+		!!window.chrome &&
+		!!window.chrome.webstore &&
+		ev.path[0].nodeName === "BUTTON"
+	) {
 		ev.path[1].parentNode.removeChild(ev.path[1]);
+	} else if (
+		typeof InstallTrigger !== "undefined" &&
+		ev.target.nodeName === "BUTTON"
+	) {
+		ev.target.parentNode.remove();
 	}
 });
 
@@ -228,3 +237,37 @@ function loadTable(month) {
 }
 loadTable(month);
 document.getElementById("save").addEventListener("click", readTable);
+
+/*
+$(function() {
+	$("#drag1, #drag2, #drag3, #drag4").dblclick(function(e) {
+		e.stopPropagation();
+		var currentEle = $(this);
+		var value = $(this).html();
+		updateVal(currentEle, value);
+	});
+});
+function updateVal(currentEle, value) {
+	$(currentEle).html(
+		'<input class="thVal" type="text" value="' + value + '" />'
+	);
+	$(".thVal").focus();
+	$(".thVal").keyup(function(event) {
+		if (event.keyCode == 13) {
+			$(currentEle).html(
+				$(".thVal")
+					.val()
+					.trim()
+			);
+		}
+	});
+
+	$(document).click(function() {
+		$(currentEle).html(
+			$(".thVal")
+				.val()
+				.trim()
+		);
+	});
+}
+*/
